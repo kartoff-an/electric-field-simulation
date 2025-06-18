@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.simField {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    overflow: -moz-hidden-unscrollable;
+    position: relative;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 140px;
+  height: 6px;
+  background: linear-gradient(90deg, #222, #333);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 0 4px #000a, inset 0 1px 2px #555;
+  transition: background 0.3s ease;
+  z-index: 10;
+  position: absolute;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: var(--thumb-color, #ff3366);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--thumb-color, #ff3366);
+  transition: all 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px var(--thumb-color, #ff3366);
+}
+
+.slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle, #ff3366, #cc0033);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff336699;
+  transition: all 0.2s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px #ff3366cc;
+}
+
+.option-panel {
+    position: absolute;
+    top: 30px;
+    left: calc(100vw - 280px);
+    background-color: #222;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-family: Arial, sans-serif;
+    width: 200px;
+}
+
+.option-panel h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    text-align: center;
+    color: #d3d3d3;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+}
+
+.option-panel .click-control,
+.option-panel .visual-control {
+    margin-bottom: 15px;
+}
+
+.option-panel label {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: color 0.2s;
+    position: relative; /* Needed for checkbox positioning */
+}
+
+.option-panel label:hover {
+    color: #d3d3d3;
+}
+
+.option-panel input[type="checkbox"] {
+    /* Hide the default checkbox */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    border: 2px solid #666;
+    border-radius: 4px;
+    background-color: #282828;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.option-panel input[type="checkbox"]:hover {
+    border-color: #d3d3d3;
+}
+
+.option-panel input[type="checkbox"]:checked {
+    background-color: #1761b0; /* Negative charge color as base */
+    border-color: #1761b0;
+}
+
+.option-panel input[type="checkbox"]:checked::before {
+    content: '✓';
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.option-panel input[type="checkbox"]:checked:hover {
+    background-color: #ff3366; 
+    border-color: #ff3366;
+}
+
+.option-panel br {
+    display: none; 
+}
+
+.buttons {
+    margin-top: 15px;
+    text-align: center;
+    background-color: #2a2a2a; 
+    border-radius: 6px; 
+    padding: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
+    transition: background-color 0.2s ease;
+    display: flex; 
+    justify-content: center; 
+    gap: 10px;
+}
+
+.buttons:hover {
+    background-color: #333; 
+}
+
+.delete-icon {
+    width: 24px;
+    height: 24px;
+    filter: invert(40%) sepia(90%) saturate(500%) hue-rotate(320deg); 
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.delete-icon:hover {
+    filter: invert(30%) sepia(95%) saturate(700%) hue-rotate(340deg); 
+    transform: scale(1.1); 
+}
+
+.delete-icon:active {
+    transform: scale(0.95); 
+}
+
+.clear-all-btn {
+    background: none; 
+    border: 2px solid #ff3366;
+    color: #ff3366; 
+    padding: 4px 10px;
+    border-radius: 4px; 
+    font-size: 0.9em;
+    font-family: Arial, sans-serif; 
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.clear-all-btn:hover {
+    background-color: #ff3366;
+    color: #ffffff; 
+    border-color: #AF0C15; 
+    transform: scale(1.05);
+}
+
+.clear-all-btn:active {
+    transform: scale(0.95); 
+    background-color: #AF0C15; 
+}
+
+.option-panel .buttons img,
+.option-panel .buttons button {
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+} 
+
+.note {
+    color: rgb(255, 255, 255, 0.6);
+    font-size: 0.6rem;
+    margin-top: 10px;
+}

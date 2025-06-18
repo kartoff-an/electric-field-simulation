@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Field Simulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sim-field"></div>
+    <input type="range" min="-10" max="10" step="0.1" class="slider">
+    <div class="option-panel">
+        <h3>Options</h3>
+        <div class="click-control">
+            <label><input type="checkbox" class="should-add-charge" checked>Add charge</label>
+        </div>
+        <div class="visual-control">
+            <label><input type="checkbox" class="show-field-lines" unchecked>Show field lines</label>
+            <label><input type="checkbox" class="show-grid-vectors" checked>Show grid vectors</label>
+            <label><input type="checkbox" class="show-heat-map" checked>Show heat map</label>
+            
+        </div>
+        <div class="buttons">
+            <img src="./icons/delete-filled-svgrepo-com.svg" class="delete-icon"/>
+            <button class="clear-all-btn">Clear All</button>
+        </div>
+        <p class="note"><i>Note: Click the point charge to change its value.</i></p>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
