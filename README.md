@@ -26,9 +26,6 @@ OR, locally
 ```bash
 git clone https://github.com/kartoff-an/electric-field-simulation
 cd electric-field-simulation
+npm install
 npx vite
 ```
-
-## 📚 License
-
-**Apache License 2.0**. You’re free to use, modify, and distribute this project as long as you include proper attribution and state any changes. See the [LICENSE](./LICENSE) file for full details.
